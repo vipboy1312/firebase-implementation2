@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { auth, googleProvider } from "../../config/firebase";
-import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithRedirect,
+} from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa6";
 import { TbLockFilled, TbMailFilled } from "react-icons/tb";
@@ -20,7 +23,7 @@ export default function Auth() {
   };
   const signInWithGoogle = async () => {
     try {
-      await signInWithPopup(auth, googleProvider);
+      await signInWithRedirect(auth, googleProvider);
 
       navigate("/");
     } catch (error) {
