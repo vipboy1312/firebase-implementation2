@@ -27,12 +27,6 @@ export default function Auth() {
       console.error(error);
     }
   };
-  const signIn = async () => {
-    try {
-    } catch (error) {
-      console.error(error);
-    }
-  };
   return (
     <div
       style={{ backgroundImage: `url(${backgroundImage})` }}
