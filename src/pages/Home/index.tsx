@@ -16,7 +16,7 @@ export default function Home() {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      navigate("/auth");
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
@@ -74,7 +74,7 @@ export default function Home() {
   return (
     <div>
       <h1>Welcome, {auth.currentUser?.displayName}</h1>
-      <Link to="/auth">
+      <Link to="/">
         <button>Sign In</button>
       </Link>
       <button onClick={handleLogout}>Logout</button>
